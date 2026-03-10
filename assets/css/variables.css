@@ -1,0 +1,58 @@
+/* Cyberpunk Neon Color Variables */
+:root {
+  /* Primary Colors */
+  --color-primary: #00F0FF;
+  --color-primary-dark: #00A8B8;
+  --color-primary-light: #33F8FF;
+
+  /* Secondary Colors */
+  --color-secondary: #FF006E;
+  --color-secondary-dark: #CC0058;
+  --color-secondary-light: #FF1A7F;
+
+  /* Accent Colors */
+  --color-accent: #39FF14;
+  --color-accent-dark: #2CD910;
+  --color-accent-light: #52FF31;
+
+  /* Neon Variants */
+  --color-neon-cyan: #00F0FF;
+  --color-neon-pink: #FF006E;
+  --color-neon-green: #39FF14;
+  --color-neon-red: #FF0000;
+  --color-neon-purple: #B537F2;
+
+  /* Dark Theme */
+  --color-dark-bg: #0A0E27;
+  --color-dark-card: #0F1535;
+  --color-dark-border: #1A1F3A;
+  --color-dark-text: #8892B0;
+
+  /* Light Theme */
+  --color-light-bg: #FFFFFF;
+  --color-light-card: #F5F5F5;
+  --color-light-border: #E0E0E0;
+  --color-light-text: #333333;
+
+  /* Shadows & Glows */
+  --glow-primary: 0 0 20px rgba(0, 240, 255, 0.5);
+  --glow-secondary: 0 0 20px rgba(255, 0, 110, 0.5);
+  --glow-accent: 0 0 20px rgba(57, 255, 20, 0.5);
+  --glow-lg: 0 0 40px rgba(0, 240, 255, 0.4);
+}
+
+/* Dark Mode Override */
+html.dark {
+  --color-bg: var(--color-dark-bg);
+  --color-card: var(--color-dark-card);
+  --color-border: var(--color-dark-border);
+  --color-text: var(--color-dark-text);
+}
+
+/* Light Mode Override */
+html.light {
+  --color-bg: var(--color-light-bg);
+  --color-card: var(--color-light-card);
+  --color-border: var(--color-light-border);
+  --color-text: var(--color-light-text);
+}

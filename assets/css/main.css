@@ -1,0 +1,222 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-dark-bg text-dark-text font-sans transition-colors duration-300;
+}
+
+/* Light Mode when light class is applied */
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  @apply bg-white text-gray-900;
+}
+
+/* Code block styling */
+code {
+  @apply bg-dark-card px-2 py-1 rounded text-sm font-mono text-primary;
+}
+
+pre {
+  @apply bg-dark-card p-4 rounded-lg overflow-x-auto mb-4 border border-dark-border;
+}
+
+pre code {
+  @apply p-0 m-0 bg-transparent;
+}
+
+/* Selection styling */
+::selection {
+  @apply bg-primary text-dark-bg;
+}
+
+::-moz-selection {
+  @apply bg-primary text-dark-bg;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-card;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full hover:bg-primary-light;
+}
+
+/* Link styling */
+a {
+  @apply text-primary transition-colors duration-200 hover:text-primary-light;
+}
+
+/* Button reset */
+button {
+  @apply cursor-pointer transition-all duration-200;
+}
+
+/* Heading styling */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold text-white;
+}
+
+h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl mb-4;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl mb-3;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl mb-2;
+}
+
+h4 {
+  @apply text-xl md:text-2xl mb-2;
+}
+
+h5 {
+  @apply text-lg md:text-xl mb-1;
+}
+
+h6 {
+  @apply text-base md:text-lg mb-1;
+}
+
+/* Paragraph styling */
+p {
+  @apply leading-relaxed mb-3 text-dark-text;
+}
+
+/* List styling */
+ul,
+ol {
+  @apply list-inside mb-4 space-y-2;
+}
+
+ul {
+  @apply list-disc;
+}
+
+ol {
+  @apply list-decimal;
+}
+
+li {
+  @apply text-dark-text;
+}
+
+/* Container utilities */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Section padding */
+.section {
+  @apply py-16 md:py-24 lg:py-32;
+}
+
+/* Gradient background */
+.gradient-cyberpunk {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1535 100%);
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image: linear-gradient(to right, rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Glow effects for text */
+.text-glow {
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 20px rgba(255, 0, 110, 0.6);
+}
+
+.text-glow-green {
+  text-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+}
+
+/* Glow effects for elements */
+.glow-effect {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+.glow-effect-pink {
+  box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
+}
+
+.glow-effect-green {
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+}
+
+.glow-effect-lg {
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.4);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, #00f0ff, #ff006e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus states for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
+
+button:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
+
+a:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary rounded-sm;
+}
+
+/* Print styles */
+@media print {
+  @page {
+    margin: 2cm;
+  }
+
+  body {
+    @apply bg-white text-black;
+  }
+
+  a {
+    @apply text-blue-600 underline;
+  }
+}

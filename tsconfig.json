@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "paths": {
+      "~": ["./"],
+      "~/*": ["./*"],
+      "#app": [".nuxt"],
+      "#app/*": [".nuxt/*"],
+      "#build": [".nuxt"],
+      "#build/*": [".nuxt/*"]
+    },
+    "types": ["nuxt", "vite/client", "vitest/globals"]
+  },
+  "include": [".nuxt/nuxt.d.ts", "**/*.vue", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist", ".nuxt"],
+  "extends": "./.nuxt/tsconfig.json"
+}
