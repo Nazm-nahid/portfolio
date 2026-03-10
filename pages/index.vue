@@ -10,10 +10,29 @@
           <!-- Left Content -->
           <div class="space-y-6 fade-in">
             <div>
-              <p class="text-primary text-lg mb-2 font-mono">👋 Welcome to my portfolio</p>
-              <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                Hi, I'm a <span class="text-primary neon-glow">Software Engineer</span>
+              <p class="text-primary text-lg mb-2 font-mono">Welcome to my universe</p>
+              <h1 class="text-4xl font-bold text-white leading-tight">
+                Hi, I'm Nahid
               </h1>
+              <div class="space-y-4">
+                <h1 class="h-16 text-2xl font-bold text-white leading-tight neon-glow p-4 rounded-lg">
+                  I've expertise in
+                  <span class="text-primary inline-block min-w-[18ch] border-primary ml-1">
+                    {{ typedSkill }}
+                  </span>
+                </h1>
+              </div>
+                    <div class="mt-4 h-20">
+                      <p class="text-lg text-dark-text font-mono">
+                      <span class="text-secondary">></span> Building scalable systems with Node.js & Python
+                      </p>
+                      <p class="text-lg text-dark-text font-mono mt-2">
+                      <span class="text-accent">></span> Crafting AI solutions that matter
+                      </p>
+                      <p class="text-lg text-dark-text font-mono mt-2">
+                      <span class="text-primary">></span> Writing code with passion and clean vibes
+                      </p>
+                    </div>
             </div>
 
             <p class="text-xl text-dark-text max-w-xl">
@@ -70,18 +89,13 @@
           <div class="hidden md:flex justify-center items-center">
             <div class="relative">
               <div
-                class="w-64 h-80 md:w-80 md:h-96 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/50 p-8 shadow-neon-cyan flex flex-col justify-end float"
+                class="w-64 h-80 md:w-80 md:h-96 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/50 shadow-neon-cyan flex flex-col justify-end float"
               >
-                <div class="space-y-2">
-                  <p class="text-primary font-mono text-sm">const developer =</p>
-                  <div class="bg-dark-card rounded p-3 font-mono text-sm text-primary">
-                    <p>{{ "{" }}</p>
-                    <p class="pl-4">name: "Creative Dev",</p>
-                    <p class="pl-4">passion: "Building Products",</p>
-                    <p class="pl-4">tech: ["Vue", "Nuxt", "React"],</p>
-                    <p>{{ "}" }}</p>
-                  </div>
-                </div>
+                <img
+                  src="~/assets/pictures/profile-photo.png"
+                  alt="Profile photo"
+                  class="w-full h-full object-cover rounded-2xl"
+                >
               </div>
 
               <!-- Animated Circles -->
@@ -511,11 +525,81 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { formatDate } from '~/utils/helpers';
 
 useHead({
   title: 'My Portfolio',
+});
+
+const expertiseSkills = [
+  'Full-Stack Development',
+  'Web Design',
+  'AI Solutions',
+  'AI Expertise',
+  'Cloud Architecture',
+];
+
+const typedSkill = ref('');
+let typingTimeout: ReturnType<typeof setTimeout> | null = null;
+let currentSkillIndex = 0;
+let currentCharIndex = 0;
+let isDeleting = false;
+let stablePrefixLength = 0;
+
+const getCommonPrefixLength = (a: string, b: string) => {
+  const maxLength = Math.min(a.length, b.length);
+  let i = 0;
+  while (i < maxLength && a[i] === b[i]) {
+    i += 1;
+  }
+  return i;
+};
+
+const scheduleTyping = (delay: number) => {
+  typingTimeout = setTimeout(typeSkill, delay);
+};
+
+const typeSkill = () => {
+  const currentSkill = expertiseSkills[currentSkillIndex];
+  const nextSkill = expertiseSkills[(currentSkillIndex + 1) % expertiseSkills.length];
+
+  if (!isDeleting) {
+    currentCharIndex += 1;
+    typedSkill.value = currentSkill.slice(0, currentCharIndex);
+
+    if (currentCharIndex >= currentSkill.length) {
+      stablePrefixLength = getCommonPrefixLength(currentSkill, nextSkill);
+      isDeleting = true;
+      scheduleTyping(1200);
+      return;
+    }
+
+    scheduleTyping(90);
+    return;
+  }
+
+  if (currentCharIndex <= stablePrefixLength) {
+    isDeleting = false;
+    currentSkillIndex = (currentSkillIndex + 1) % expertiseSkills.length;
+    scheduleTyping(250);
+    return;
+  }
+
+  currentCharIndex -= 1;
+  typedSkill.value = currentSkill.slice(0, currentCharIndex);
+
+  scheduleTyping(45);
+};
+
+onMounted(() => {
+  scheduleTyping(300);
+});
+
+onBeforeUnmount(() => {
+  if (typingTimeout) {
+    clearTimeout(typingTimeout);
+  }
 });
 
 const form = ref({
