@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
       <!-- Background Animation -->
       <div class="absolute inset-0 grid-pattern opacity-30"></div>
 
@@ -10,12 +10,12 @@
           <!-- Left Content -->
           <div class="space-y-6 fade-in">
             <div>
-              <p class="text-primary text-lg mb-2 font-mono">Software Engineer | Competitive Programmer</p>
-              <h1 class="text-4xl font-bold text-white leading-tight">
-                Hi, I'm MD. Nazmul Hossain Nahid
+              <p class="text-primary text-sm md:text-lg mb-2 font-mono">Software Engineer | Competitive Programmer</p>
+              <h1 class="text-2xl md:text-4xl font-bold text-white leading-tight">
+                Hi, I'm Nazmul Hossain Nahid
               </h1>
               <div class="space-y-4">
-                <h1 class="h-16 text-2xl font-bold text-white leading-tight neon-glow p-4 rounded-lg">
+                <h1 class="h-16 text-lg md:text-2xl font-bold text-white leading-tight neon-glow p-4 rounded-lg">
                   I've expertise in
                   <span class="text-primary inline-block min-w-[18ch] border-primary ml-1">
                     {{ typedSkill }}
@@ -88,29 +88,22 @@
           </div>
 
           <!-- Right Content - Animated Card & Chat -->
-          <div class="hidden md:flex justify-center items-center flex-col gap-6">
+          <div class=" md:flex justify-center items-center flex-col gap-6">
             <div class="relative">
-              <div
-                class="w-64 h-80 md:w-80 md:h-96 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/50 shadow-neon-cyan flex flex-col justify-end float"
-              >
-                <img
-                  src="~/assets/pictures/profile-photo.png"
-                  alt="Profile photo"
-                  class="w-full h-full object-cover rounded-2xl"
-                >
-              </div>
-
+              <ChatBot class="shadow-neon-cyan float" />
               <!-- Animated Circles -->
-              <div
-                class="absolute w-40 h-40 rounded-full border border-secondary/30 -top-10 -right-10 animate-pulse"
-              ></div>
-              <div
+              <!-- <div
+                class="absolute w-40 h-40 rounded-full border border-accent/30 -top-10 -left-10 animate-pulse"
+              >
+                
+              </div> -->
+              <!-- <div
                 class="absolute w-32 h-32 rounded-full border border-accent/30 -bottom-5 -left-10 animate-pulse"
-              ></div>
+              ></div> -->
             </div>
 
             <!-- ChatBot Component -->
-            <ChatBot />
+            
           </div>
         </div>
 

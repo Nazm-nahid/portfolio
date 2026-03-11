@@ -6,9 +6,13 @@
       <!-- Logo -->
       <a
         href="#home"
-        class="text-2xl font-bold text-primary glow-effect hover:text-primary-light transition-all duration-200"
+        class="text-2xl rounded-full font-bold text-primary glow-effect hover:text-primary-light transition-all duration-200"
       >
-        <span class="bg-primary/20 px-3 py-1 rounded-lg">Portfolio</span>
+        <img
+                  src="~/assets/pictures/profile-photo.png"
+                  alt="Profile photo"
+                  class="w-16 h-16 rounded-full animate-pulse"
+                >
       </a>
 
       <!-- Desktop Navigation -->

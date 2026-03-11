@@ -11,7 +11,7 @@
         class="p-2 hover:bg-dark-border rounded-lg transition-colors text-xs text-dark-text hover:text-primary"
         title="Clear chat"
       >
-        ✕
+        Clear chat
       </button>
     </div>
 
