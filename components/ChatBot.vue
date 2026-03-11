@@ -1,13 +1,29 @@
 <template>
-  <div class="w-full max-w-md bg-dark-card border border-primary/30 rounded-xl shadow-lg overflow-hidden flex flex-col h-96">
+  <!-- Fullscreen overlay -->
+  <Teleport to="body">
+    <div
+      v-if="isFullscreen"
+      class="fixed inset-0 z-50 bg-dark-bg/95 backdrop-blur-sm flex items-center justify-center p-4"
+    >
+      <div class="w-full max-w-3xl h-full max-h-screen flex flex-col bg-dark-card border border-primary/30 rounded-xl shadow-2xl overflow-hidden">
+        <ChatInner :is-fullscreen="true" @toggle-fullscreen="isFullscreen = false" />
+      </div>
+    </div>
+  </Teleport>
+
+  <!-- Normal card -->
+  <div
+    v-if="!isFullscreen"
+    class="w-full max-w-md bg-dark-card border border-primary/30 rounded-xl shadow-lg overflow-hidden flex flex-col h-96"
+  >
     <!-- Header -->
     <div class="bg-gradient-to-r from-primary/20 to-secondary/20 border-b border-primary/30 p-4">
       <div class="flex items-center justify-between mb-3">
         <div>
           <h3 class="text-lg font-bold text-primary">
-            {{ language === 'en' ? 'Chat with Nahid' : 'নাহিদের সাথে চ্যাট' }}
+            {{ language === 'en' ? 'Chat with Nahid\'s AI' : 'নাহিদের AI-এর সাথে চ্যাট করুন' }}
           </h3>
-          <p class="text-xs text-dark-text">{{ language === 'en' ? 'Ask anything about my work & skills' : 'নাহিদের সাথে চ্যাট' }}</p>
+          <p class="text-xs text-dark-text">{{ language === 'en' ? 'You can ask anything about my work, skills, and also about the project you want me to work on' : 'আমার কাজ, দক্ষতা এবং আপনি যে প্রজেক্টে আমাকে দিয়ে কাজ করাতে চান সে সম্পর্কেও যেকোনো প্রশ্ন করতে পারেন।' }}</p>
         </div>
         <div class="flex gap-2">
         <button
@@ -33,13 +49,6 @@
           Bangla
         </button>
       </div>
-        <button
-          @click="clearChat"
-          class="p-2 hover:bg-dark-border rounded-lg transition-colors text-xs text-dark-text hover:text-primary"
-          :title="language === 'en' ? 'Clear chat' : 'চ্যাট সাফ করুন'"
-        >
-          {{ language === 'en' ? 'Clear' : 'সাফ' }}
-        </button>
       </div>
       <p v-if="errorMessage" class="text-red-400">{{ errorMessage }}</p>
     </div>
@@ -122,9 +131,10 @@ import { onMounted, ref, nextTick } from 'vue';
 import { useOpenRouterChat } from '~/composables/useOpenRouterChat';
 import { marked } from 'marked';
 
-const { messages, isLoading, status, errorMessage, language, initialize, sendMessage, clearMessages, setLanguage } = useOpenRouterChat();
+const { messages, isLoading, errorMessage, language, initialize, sendMessage, setLanguage } = useOpenRouterChat();
 const inputText = ref('');
 const messagesContainer = ref<HTMLElement>();
+const isFullscreen = ref(false);
 
 const renderMarkdown = (content: string) => {
   return marked(content, {
@@ -132,6 +142,7 @@ const renderMarkdown = (content: string) => {
     gfm: true,
   });
 };
+
 const handleSend = async () => {
   if (!inputText.value.trim()) return;
 
@@ -140,21 +151,15 @@ const handleSend = async () => {
 
   await sendMessage(userInput);
 
-  // Scroll to bottom
   await nextTick();
   if (messagesContainer.value) {
     messagesContainer.value.scrollTop = messagesContainer.value.scrollHeight;
   }
 };
 
-const clearChat = () => {
-  clearMessages();
-  inputText.value = '';
-};
-
-// Scroll to bottom when messages change
 onMounted(async () => {
   await initialize();
+
   await nextTick();
   if (messagesContainer.value) {
     messagesContainer.value.scrollTop = messagesContainer.value.scrollHeight;
