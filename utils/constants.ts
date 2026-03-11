@@ -41,22 +41,17 @@ export const NAV_LINKS = [
 export const SOCIAL_LINKS = [
   {
     name: 'GitHub',
-    url: 'https://github.com',
+    url: 'https://github.com/Nazm-nahid',
     icon: 'github',
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com',
+    url: 'https://www.linkedin.com/in/nazm-nahid',
     icon: 'linkedin',
   },
   {
-    name: 'Twitter',
-    url: 'https://twitter.com',
-    icon: 'twitter',
-  },
-  {
     name: 'Email',
-    url: 'mailto:your.email@example.com',
+    url: 'mailto:nazm.nahid@gmail.com',
     icon: 'mail',
   },
 ] as const;

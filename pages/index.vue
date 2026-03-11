@@ -10,9 +10,9 @@
           <!-- Left Content -->
           <div class="space-y-6 fade-in">
             <div>
-              <p class="text-primary text-lg mb-2 font-mono">Welcome to my universe</p>
+              <p class="text-primary text-lg mb-2 font-mono">Software Engineer | Competitive Programmer</p>
               <h1 class="text-4xl font-bold text-white leading-tight">
-                Hi, I'm Nahid
+                Hi, I'm MD. Nazmul Hossain Nahid
               </h1>
               <div class="space-y-4">
                 <h1 class="h-16 text-2xl font-bold text-white leading-tight neon-glow p-4 rounded-lg">
@@ -22,43 +22,45 @@
                   </span>
                 </h1>
               </div>
-                    <div class="mt-4 h-20">
-                      <p class="text-lg text-dark-text font-mono">
-                      <span class="text-secondary">></span> Building scalable systems with Node.js & Python
-                      </p>
-                      <p class="text-lg text-dark-text font-mono mt-2">
-                      <span class="text-accent">></span> Crafting AI solutions that matter
-                      </p>
-                      <p class="text-lg text-dark-text font-mono mt-2">
-                      <span class="text-primary">></span> Writing code with passion and clean vibes
-                      </p>
-                    </div>
+              <div class="mt-4 h-20">
+                <p class="text-lg text-dark-text font-mono">
+                  <span class="text-secondary">></span> Built OTP verification tooling that made operations 4x faster
+                </p>
+                <p class="text-lg text-dark-text font-mono mt-2">
+                  <span class="text-accent">></span> Reduced parcel loss by ~80% with fraud-aware workflow redesign
+                </p>
+                <p class="text-lg text-dark-text font-mono mt-2">
+                  <span class="text-primary">></span> Solved 1300+ DSA problems across online judges
+                </p>
+              </div>
             </div>
 
             <p class="text-xl text-dark-text max-w-xl">
-              I craft beautiful, performant digital experiences using modern web technologies. Let's
-              build something amazing together.
+              Software Engineer at Pathao, building secure and scalable products across verification,
+              feedback, pickup, authentication, and payment systems.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4">
               <a
-                href="#projects"
+                href="#contact"
                 class="px-8 py-4 rounded-lg bg-primary text-dark-bg font-bold hover:bg-primary-light hover:shadow-neon-cyan transition-all duration-200 inline-block text-center"
               >
-                View My Work
+                Hire Me
               </a>
-              <a
-                href="#contact"
+                <a
+                href="https://drive.google.com/file/d/1lwhqwFtQsmNLnWtms1uoRXenCPhNVb19/view"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="px-8 py-4 rounded-lg border-2 border-primary text-primary hover:bg-primary hover:text-dark-bg transition-all duration-200 inline-block text-center font-bold"
-              >
-                Get in Touch
-              </a>
+                >
+                View Resume
+                </a>
             </div>
 
             <!-- Social Links -->
             <div class="flex gap-4 pt-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Nazm-nahid"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="w-12 h-12 flex items-center justify-center rounded-lg bg-dark-card border border-primary text-primary hover:bg-primary hover:text-dark-bg transition-all duration-200"
@@ -67,7 +69,7 @@
                 <span class="text-xl font-bold">⚙</span>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/nazm-nahid"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="w-12 h-12 flex items-center justify-center rounded-lg bg-dark-card border border-primary text-primary hover:bg-primary hover:text-dark-bg transition-all duration-200"
@@ -76,7 +78,7 @@
                 <span class="text-xl font-bold">in</span>
               </a>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:nazm.nahid@gmail.com"
                 class="w-12 h-12 flex items-center justify-center rounded-lg bg-dark-card border border-primary text-primary hover:bg-primary hover:text-dark-bg transition-all duration-200"
                 title="Email"
               >
@@ -128,20 +130,20 @@
       <div class="container">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div class="text-center">
-            <div class="text-4xl font-bold text-primary mb-2">50+</div>
-            <p class="text-dark-text">Projects Completed</p>
+            <div class="text-4xl font-bold text-primary mb-2">1300+</div>
+            <p class="text-dark-text">DSA Problems Solved</p>
           </div>
           <div class="text-center">
-            <div class="text-4xl font-bold text-secondary mb-2">30+</div>
-            <p class="text-dark-text">Happy Clients</p>
+            <div class="text-4xl font-bold text-secondary mb-2">80%</div>
+            <p class="text-dark-text">Parcel Loss Reduced</p>
           </div>
           <div class="text-center">
-            <div class="text-4xl font-bold text-accent mb-2">5+</div>
-            <p class="text-dark-text">Years Experience</p>
+            <div class="text-4xl font-bold text-accent mb-2">4x</div>
+            <p class="text-dark-text">Faster Verification Ops</p>
           </div>
           <div class="text-center">
-            <div class="text-4xl font-bold text-primary mb-2">100%</div>
-            <p class="text-dark-text">Dedication</p>
+            <div class="text-4xl font-bold text-primary mb-2">121st</div>
+            <p class="text-dark-text">ICPC Dhaka Regional 2023</p>
           </div>
         </div>
       </div>
@@ -155,18 +157,16 @@
           <div class="space-y-6">
             <h2 class="text-4xl font-bold text-white">Who Am I?</h2>
             <p class="text-dark-text leading-relaxed">
-              I'm a passionate software engineer with a love for creating beautiful, functional
-              digital experiences. With over 5 years of experience in web development, I've worked
-              on diverse projects ranging from startup MVPs to large-scale enterprise applications.
+              I'm a Software Engineer currently working at Pathao, one of the leading ride-sharing,
+              courier, food delivery, and fintech companies in Bangladesh and Nepal.
             </p>
             <p class="text-dark-text leading-relaxed">
-              My journey in tech started with a curiosity about how things work. Today, I combine
-              that curiosity with modern web technologies to solve real-world problems and build
-              products that make a difference.
+              I design and deliver secure, scalable systems focused on real operational impact,
+              including verification, feedback, authentication, and payment workflows.
             </p>
             <p class="text-dark-text leading-relaxed">
-              When I'm not coding, you can find me exploring new technologies, writing about web
-              development, or contributing to open-source projects.
+              Beyond product engineering, I am an active competitive programmer with strong
+              problem-solving fundamentals and proven contest performance.
             </p>
           </div>
 
@@ -175,59 +175,17 @@
             <h2 class="text-4xl font-bold text-white">Skills & Technologies</h2>
 
             <div class="space-y-6">
-              <div>
-                <h3 class="text-lg font-bold text-primary mb-3">Frontend</h3>
+              <div v-for="(group, index) in skillGroups" :key="group.title">
+                <h3 class="text-lg font-bold mb-3" :class="index % 3 === 0 ? 'text-primary' : index % 3 === 1 ? 'text-secondary' : 'text-accent'">
+                  {{ group.title }}
+                </h3>
                 <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 rounded-full bg-primary/20 border border-primary text-primary text-sm">
-                    Vue.js
-                  </span>
-                  <span class="px-3 py-1 rounded-full bg-primary/20 border border-primary text-primary text-sm">
-                    Nuxt.js
-                  </span>
-                  <span class="px-3 py-1 rounded-full bg-primary/20 border border-primary text-primary text-sm">
-                    React
-                  </span>
-                  <span class="px-3 py-1 rounded-full bg-primary/20 border border-primary text-primary text-sm">
-                    HTML & CSS
-                  </span>
-                  <span class="px-3 py-1 rounded-full bg-primary/20 border border-primary text-primary text-sm">
-                    TypeScript
-                  </span>
-                </div>
-              </div>
-
-              <div>
-                <h3 class="text-lg font-bold text-secondary mb-3">Backend</h3>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 rounded-full bg-secondary/20 border border-secondary text-secondary text-sm">
-                    Node.js
-                  </span>
-                  <span class="px-3 py-1 rounded-full bg-secondary/20 border border-secondary text-secondary text-sm">
-                    Express
-                  </span>
-                  <span class="px-3 py-1 rounded-full bg-secondary/20 border border-secondary text-secondary text-sm">
-                    MongoDB
-                  </span>
-                  <span class="px-3 py-1 rounded-full bg-secondary/20 border border-secondary text-secondary text-sm">
-                    PostgreSQL
-                  </span>
-                </div>
-              </div>
-
-              <div>
-                <h3 class="text-lg font-bold text-accent mb-3">Tools & Others</h3>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 rounded-full bg-accent/20 border border-accent text-accent text-sm">
-                    Git
-                  </span>
-                  <span class="px-3 py-1 rounded-full bg-accent/20 border border-accent text-accent text-sm">
-                    Docker
-                  </span>
-                  <span class="px-3 py-1 rounded-full bg-accent/20 border border-accent text-accent text-sm">
-                    AWS
-                  </span>
-                  <span class="px-3 py-1 rounded-full bg-accent/20 border border-accent text-accent text-sm">
-                    CI/CD
+                  <span
+                    v-for="skill in group.items"
+                    :key="skill"
+                    class="px-3 py-1 rounded-full bg-primary/20 border border-primary text-primary text-sm"
+                  >
+                    {{ skill }}
                   </span>
                 </div>
               </div>
@@ -243,43 +201,16 @@
         <h2 class="text-4xl font-bold text-white mb-12 text-center">My Journey</h2>
 
         <div class="max-w-4xl mx-auto space-y-8">
-          <div class="flex gap-6">
+          <div v-for="(item, index) in careerTimeline" :key="item.title" class="flex gap-6">
             <div class="flex flex-col items-center">
               <div class="w-4 h-4 rounded-full bg-primary"></div>
-              <div class="w-0.5 h-32 bg-primary/30"></div>
+              <div v-if="index !== careerTimeline.length - 1" class="w-0.5 h-32 bg-primary/30"></div>
             </div>
             <div>
-              <h3 class="text-2xl font-bold text-white">Started My Journey</h3>
-              <p class="text-primary font-mono text-sm">2019</p>
+              <h3 class="text-2xl font-bold text-white">{{ item.title }}</h3>
+              <p class="text-primary font-mono text-sm">{{ item.period }}</p>
               <p class="text-dark-text mt-2">
-                Began my career as a frontend developer, focusing on learning modern web technologies.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex gap-6">
-            <div class="flex flex-col items-center">
-              <div class="w-4 h-4 rounded-full bg-primary"></div>
-              <div class="w-0.5 h-32 bg-primary/30"></div>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-white">Full-Stack Development</h3>
-              <p class="text-primary font-mono text-sm">2020</p>
-              <p class="text-dark-text mt-2">
-                Expanded my skill set to include backend development and became a full-stack engineer.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex gap-6">
-            <div class="flex flex-col items-center">
-              <div class="w-4 h-4 rounded-full bg-primary"></div>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-white">Today</h3>
-              <p class="text-primary font-mono text-sm">2024+</p>
-              <p class="text-dark-text mt-2">
-                Specializing in building scalable applications and mentoring junior developers.
+                {{ item.description }}
               </p>
             </div>
           </div>
@@ -292,10 +223,9 @@
       <div class="container">
         <h2 class="text-4xl font-bold text-white mb-12 text-center">My Projects</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Sample Project Cards -->
           <div
-            v-for="i in 6"
-            :key="i"
+            v-for="project in projects"
+            :key="project.title"
             class="group rounded-xl bg-dark-card border border-dark-border overflow-hidden hover:border-primary hover:shadow-neon-cyan transition-all duration-300"
           >
             <div class="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden">
@@ -308,33 +238,19 @@
             </div>
 
             <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2">Project {{ i }}</h3>
+              <h3 class="text-xl font-bold text-white mb-2">{{ project.title }}</h3>
               <p class="text-dark-text text-sm mb-4">
-                A brief description of this amazing project I built using modern technologies and best practices.
+                {{ project.description }}
               </p>
 
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-2 py-1 rounded text-xs bg-primary/20 text-primary font-mono">
-                  Vue.js
-                </span>
-                <span class="px-2 py-1 rounded text-xs bg-secondary/20 text-secondary font-mono">
-                  Nuxt
-                </span>
-              </div>
-
-              <div class="flex gap-4">
-                <a
-                  href="#"
-                  class="flex-1 px-4 py-2 rounded-lg bg-primary/20 text-primary text-sm font-bold hover:bg-primary hover:text-dark-bg transition-all duration-200 text-center"
+                <span
+                  v-for="tech in project.techs"
+                  :key="tech"
+                  class="px-2 py-1 rounded text-xs bg-primary/20 text-primary font-mono"
                 >
-                  View
-                </a>
-                <a
-                  href="#"
-                  class="flex-1 px-4 py-2 rounded-lg border border-primary text-primary text-sm font-bold hover:bg-primary hover:text-dark-bg transition-all duration-200 text-center"
-                >
-                  Code
-                </a>
+                  {{ tech }}
+                </span>
               </div>
             </div>
           </div>
@@ -342,49 +258,23 @@
       </div>
     </section>
 
-    <!-- Blog Section -->
+    <!-- Achievements Section -->
     <section id="blog" class="section border-t border-dark-border">
       <div class="container max-w-4xl">
-        <h2 class="text-4xl font-bold text-white mb-12 text-center">Latest Blog Posts</h2>
+        <h2 class="text-4xl font-bold text-white mb-12 text-center">Programming Contests & Achievements</h2>
         <div class="space-y-8">
-          <!-- Sample Blog Card -->
-          <div v-for="i in 5" :key="i" class="group rounded-xl bg-dark-card border border-dark-border p-6 hover:border-primary hover:shadow-neon-cyan transition-all duration-300">
+          <div
+            v-for="achievement in achievements"
+            :key="achievement"
+            class="group rounded-xl bg-dark-card border border-dark-border p-6 hover:border-primary hover:shadow-neon-cyan transition-all duration-300"
+          >
             <div class="flex flex-col md:flex-row gap-6">
-              <!-- Image Placeholder -->
-              <div class="md:w-48 h-40 md:h-32 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex-shrink-0 flex items-center justify-center">
-                <span class="text-4xl text-primary opacity-50">📄</span>
+              <div class="md:w-16 h-16 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex-shrink-0 flex items-center justify-center">
+                <span class="text-2xl text-primary opacity-70">🏆</span>
               </div>
 
-              <!-- Content -->
               <div class="flex-1 space-y-3">
-                <h2 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
-                  Blog Post {{ i }}: Getting Started with Web Development
-                </h2>
-
-                <p class="text-dark-text line-clamp-2">
-                  Learn the fundamentals of modern web development and best practices for building scalable applications.
-                </p>
-
-                <div class="flex items-center gap-4 text-sm text-dark-text font-mono">
-                  <span>{{ formatDate(new Date()) }}</span>
-                  <span>{{ Math.ceil(Math.random() * 10) + 5 }} min read</span>
-                </div>
-
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-2 py-1 rounded text-xs bg-primary/20 text-primary">
-                    Tutorial
-                  </span>
-                  <span class="px-2 py-1 rounded text-xs bg-secondary/20 text-secondary">
-                    Web Dev
-                  </span>
-                </div>
-
-                <a
-                  href="#"
-                  class="inline-block mt-4 px-6 py-2 rounded-lg bg-primary/20 text-primary font-bold hover:bg-primary hover:text-dark-bg transition-all duration-200"
-                >
-                  Read More →
-                </a>
+                <p class="text-lg text-white group-hover:text-primary transition-colors">{{ achievement }}</p>
               </div>
             </div>
           </div>
@@ -398,39 +288,38 @@
         <h2 class="text-4xl font-bold text-white mb-12 text-center">Get In Touch</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <!-- Contact Info Cards -->
           <div class="text-center space-y-4">
             <div class="w-16 h-16 rounded-full bg-primary/20 border border-primary flex items-center justify-center mx-auto text-3xl">
               ✉
             </div>
             <div>
               <h3 class="text-lg font-bold text-white mb-2">Email</h3>
-              <a href="mailto:your.email@example.com" class="text-primary hover:text-primary-light transition-colors">
-                your.email@example.com
+              <a href="mailto:nazm.nahid@gmail.com" class="text-primary hover:text-primary-light transition-colors">
+                nazm.nahid@gmail.com
               </a>
             </div>
           </div>
 
           <div class="text-center space-y-4">
             <div class="w-16 h-16 rounded-full bg-secondary/20 border border-secondary flex items-center justify-center mx-auto text-3xl">
-              🔗
+              ☎
             </div>
             <div>
-              <h3 class="text-lg font-bold text-white mb-2">LinkedIn</h3>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-secondary-light transition-colors">
-                Connect with me
+              <h3 class="text-lg font-bold text-white mb-2">Phone</h3>
+              <a href="tel:+8801404343933" class="text-secondary hover:text-secondary-light transition-colors">
+                (+880) 1404343933
               </a>
             </div>
           </div>
 
           <div class="text-center space-y-4">
             <div class="w-16 h-16 rounded-full bg-accent/20 border border-accent flex items-center justify-center mx-auto text-3xl">
-              ⚙
+              🔗
             </div>
             <div>
-              <h3 class="text-lg font-bold text-white mb-2">GitHub</h3>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-accent hover:text-accent-light transition-colors">
-                Check my work
+              <h3 class="text-lg font-bold text-white mb-2">LinkedIn</h3>
+              <a href="https://www.linkedin.com/in/nazm-nahid" target="_blank" rel="noopener noreferrer" class="text-accent hover:text-accent-light transition-colors">
+                Connect with me
               </a>
             </div>
           </div>
@@ -526,18 +415,91 @@
 
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue';
-import { formatDate } from '~/utils/helpers';
 
 useHead({
-  title: 'My Portfolio',
+  title: 'MD. Nazmul Hossain Nahid | Software Engineer',
 });
 
 const expertiseSkills = [
-  'Full-Stack Development',
-  'Web Design',
-  'AI Solutions',
   'AI Expertise',
+  'AI Development',
+  'Full-Stack Development',
   'Cloud Architecture',
+  'Competitive Programming',
+];
+
+const skillGroups = [
+  {
+    title: 'Languages',
+    items: ['C', 'C++', 'Java', 'PHP', 'JavaScript', 'Python'],
+  },
+  {
+    title: 'Frameworks',
+    items: ['Spring Boot', 'Laravel', 'Golang', 'Vue.js', 'Nuxt.js'],
+  },
+  {
+    title: 'Web',
+    items: ['HTML', 'CSS', 'jQuery', 'Ajax', 'TailwindCSS'],
+  },
+  {
+    title: 'Database',
+    items: ['MySQL', 'PostgreSQL'],
+  },
+  {
+    title: 'Tools',
+    items: ['Git', 'Docker', 'CI/CD'],
+  },
+];
+
+const careerTimeline = [
+  {
+    title: 'Junior Software Engineer (Part-time), BYDO Academy',
+    period: 'Sept 2021 – Sept 2022',
+    description:
+      'Built and maintained scalable user and content management systems for an education-focused social platform.',
+  },
+  {
+    title: 'B.Sc. in CSE, RUET',
+    period: 'Graduation: 2024 | CGPA: 3.49',
+    description:
+      'Completed Computer Science and Engineering with strong focus on software engineering fundamentals and problem solving.',
+  },
+  {
+    title: 'Software Engineer I, Pathao',
+    period: 'June 2024 – Present',
+    description:
+      'Delivered OTP bypass verification tooling, cohort-based feedback platform (Jorip), and secure workflow improvements reducing fraud and parcel loss.',
+  },
+];
+
+const projects = [
+  {
+    title: 'Jorip — Feedback Collection Platform',
+    description:
+      'Built a cohort-based feedback platform with webhooks, dynamic configuration, and iframe integration to reduce customer churn through data-driven insights.',
+    techs: ['Golang', 'Nuxt.js', 'PostgreSQL', 'CI/CD', 'Consul', 'Viper'],
+  },
+  {
+    title: 'RUET CSE Alumni Platform',
+    description:
+      'Architected backend for directory, forum, job portal, events, and admin workflows with secure REST APIs and JWT-based authentication.',
+    techs: ['Spring Boot', 'MySQL', 'REST API', 'JWT', 'OTP Email'],
+  },
+  {
+    title: 'KhujeDei — Lost & Found Platform',
+    description:
+      'Built an intelligent platform with AI-based face recognition and Messenger chatbot automation, including admin dashboard and case management.',
+    techs: ['Spring Boot', 'MySQL', 'REST API', 'JWT', 'AI Face Recognition'],
+  },
+];
+
+const achievements = [
+  'Solved 1300+ DSA problems across online judges.',
+  'ICPC Dhaka Regional 2023 — 121st place.',
+  'RUET Codesmash 2019 — 5th place among 200 participants.',
+  'Problem Setter — Code to Save a Mother, RUET Codesmash 2020.',
+  'Codeforces Specialist (Max Rating: 1584), Best Rank: 365th.',
+  'CodeChef (Max Rating: 1855), Best Rank: 159th worldwide.',
 ];
 
 const typedSkill = ref('');
