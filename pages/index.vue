@@ -24,20 +24,18 @@
               </div>
               <div class="mt-4 h-20">
                 <p class="text-lg text-dark-text font-mono">
-                  <span class="text-secondary">></span> Built OTP verification tooling that made operations 4x faster
+                  <span class="text-accent">></span> Software Engineer at Pathao since June 2024
                 </p>
                 <p class="text-lg text-dark-text font-mono mt-2">
-                  <span class="text-accent">></span> Reduced parcel loss by ~80% with fraud-aware workflow redesign
-                </p>
-                <p class="text-lg text-dark-text font-mono mt-2">
-                  <span class="text-primary">></span> Solved 1300+ DSA problems across online judges
+                  <span class="text-accent">></span> Graduated from RUET in Computer Science & Engineering
                 </p>
               </div>
             </div>
 
             <p class="text-xl text-dark-text max-w-xl">
-              Software Engineer at Pathao, building secure and scalable products across verification,
-              feedback, pickup, authentication, and payment systems.
+              <span class="text-secondary">></span>
+              I build secure, large scale software with strong backend expertise and a product-focused mindset.
+I’m also a competitive programmer with 1300+ solved problems, bringing sharp problem-solving to real-world engineering.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4">
@@ -152,10 +150,21 @@
           <!-- Left Content -->
           <div class="space-y-6">
             <h2 class="text-4xl font-bold text-white">Who Am I?</h2>
-            <p class="text-dark-text leading-relaxed">
-              I'm a Software Engineer currently working at Pathao, one of the leading ride-sharing,
-              courier, food delivery, and fintech companies in Bangladesh and Nepal.
-            </p>
+            <div class="flex justify-between mr-20">
+              <div class="w-128 h-128 hidden md:block">
+                <img
+                  src="~/assets/pictures/profile-photo.png"
+                  alt="Profile photo"
+                  class="rounded-2xl border border-primary/40 shadow-neon-cyan"
+                >
+              </div>
+              <div class="ml-10">
+                <p class="text-dark-text">
+                  I'm a Software Engineer currently working at Pathao, one of the leading ride-sharing,
+                  courier, food delivery, and fintech companies in Bangladesh and Nepal.
+                </p>
+              </div>
+            </div>
             <p class="text-dark-text leading-relaxed">
               I design and deliver secure, scalable systems focused on real operational impact,
               including verification, feedback, authentication, and payment workflows.
@@ -165,8 +174,6 @@
               problem-solving fundamentals and proven contest performance.
             </p>
           </div>
-
-          <!-- Right Content - Skills -->
           <div class="space-y-6">
             <h2 class="text-4xl font-bold text-white">Skills & Technologies</h2>
 
@@ -192,7 +199,7 @@
     </section>
 
     <!-- Timeline Section -->
-    <section class="section border-t border-dark-border">
+    <section id="timeline" class="section border-t border-dark-border">
       <div class="container">
         <h2 class="text-4xl font-bold text-white mb-12 text-center">My Journey</h2>
 
@@ -417,11 +424,13 @@ useHead({
 });
 
 const expertiseSkills = [
-  'AI Expertise',
-  'AI Development',
-  'Full-Stack Development',
-  'Cloud Architecture',
+  'Backend Development',
+  'Golang,Spring Boot & Laravel',
+  'AI Integration',
+  'Frontend Development',
+  'Vue Js & Nuxt.js',
   'Competitive Programming',
+  'Machine Learning',
 ];
 
 const skillGroups = [
@@ -449,10 +458,16 @@ const skillGroups = [
 
 const careerTimeline = [
   {
-    title: 'Junior Software Engineer (Part-time), BYDO Academy',
-    period: 'Sept 2021 – Sept 2022',
+    title: 'Software Engineer I, Pathao',
+    period: 'January 2025 – Present',
     description:
-      'Built and maintained scalable user and content management systems for an education-focused social platform.',
+      'Delivered OTP bypass verification tooling, cohort-based feedback platform (Jorip), and secure workflow improvements reducing fraud and parcel loss.',
+  },
+  {
+    title: 'Associate Software Engineer, Pathao',
+    period: 'June 2024 – December 2024',
+    description:
+      'Develop a monthly feedback collection system with a report sending scheduler, improving customer retention through data-driven insights.',
   },
   {
     title: 'B.Sc. in CSE, RUET',
@@ -461,10 +476,10 @@ const careerTimeline = [
       'Completed Computer Science and Engineering with strong focus on software engineering fundamentals and problem solving.',
   },
   {
-    title: 'Software Engineer I, Pathao',
-    period: 'June 2024 – Present',
+    title: 'Junior Software Engineer (Part-time), BYDO Academy',
+    period: 'Sept 2021 – Sept 2022',
     description:
-      'Delivered OTP bypass verification tooling, cohort-based feedback platform (Jorip), and secure workflow improvements reducing fraud and parcel loss.',
+      'Built and maintained scalable user and content management systems for an education-focused social platform.',
   },
 ];
 
