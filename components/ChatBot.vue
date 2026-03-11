@@ -1,18 +1,47 @@
 <template>
   <div class="w-full max-w-md bg-dark-card border border-primary/30 rounded-xl shadow-lg overflow-hidden flex flex-col h-96">
     <!-- Header -->
-    <div class="bg-gradient-to-r from-primary/20 to-secondary/20 border-b border-primary/30 p-4 flex items-center justify-between">
-      <div>
-        <h3 class="text-lg font-bold text-primary">Chat with my Bot</h3>
-        <p class="text-xs text-dark-text">Ask anything about my work & skills</p>
+    <div class="bg-gradient-to-r from-primary/20 to-secondary/20 border-b border-primary/30 p-4">
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <h3 class="text-lg font-bold text-primary">
+            {{ language === 'en' ? 'Chat with Nahid' : 'নাহিদের সাথে চ্যাট' }}
+          </h3>
+          <p class="text-xs text-dark-text">{{ language === 'en' ? 'Ask anything about my work & skills' : 'নাহিদের সাথে চ্যাট' }}</p>
+        </div>
+        <div class="flex gap-2">
+        <button
+          @click="setLanguage('en')"
+          :class="[
+            'px-3 py-1 rounded text-xs font-semibold transition-colors',
+            language === 'en'
+              ? 'bg-primary text-dark-bg'
+              : 'bg-dark-border text-dark-text hover:border-primary',
+          ]"
+        >
+          English
+        </button>
+        <button
+          @click="setLanguage('bn')"
+          :class="[
+            'px-3 py-1 rounded text-xs font-semibold transition-colors',
+            language === 'bn'
+              ? 'bg-primary text-dark-bg'
+              : 'bg-dark-border text-dark-text hover:border-primary',
+          ]"
+        >
+          Bangla
+        </button>
       </div>
-      <button
-        @click="clearChat"
-        class="p-2 hover:bg-dark-border rounded-lg transition-colors text-xs text-dark-text hover:text-primary"
-        title="Clear chat"
-      >
-        Clear chat
-      </button>
+        <button
+          @click="clearChat"
+          class="p-2 hover:bg-dark-border rounded-lg transition-colors text-xs text-dark-text hover:text-primary"
+          :title="language === 'en' ? 'Clear chat' : 'চ্যাট সাফ করুন'"
+        >
+          {{ language === 'en' ? 'Clear' : 'সাফ' }}
+        </button>
+      </div>
+      <p v-if="errorMessage" class="text-red-400">{{ errorMessage }}</p>
     </div>
 
     <!-- Messages -->
@@ -23,7 +52,8 @@
       >
         <div>
           <p class="text-primary font-mono mb-2">👋</p>
-          <p>Hey! Ask me about my projects, skills, or experience</p>
+          <p v-if="language === 'en'">Ask me anything about my experience, skills, or projects!</p>
+          <p v-else>আমার অভিজ্ঞতা, দক্ষতা, বা প্রকল্প সম্পর্কে কিছু জিজ্ঞাসা করুন!</p>
         </div>
       </div>
 
@@ -44,9 +74,10 @@
               ? 'bg-secondary/20 text-white ml-2'
               : 'bg-primary/10 border border-primary/30 text-dark-text'
           "
-        >
-          {{ msg.content }}
-        </div>
+          >
+            <div v-if="msg.role === 'assistant'" class="prose prose-invert prose-sm max-w-none" v-html="renderMarkdown(msg.content)"></div>
+            <div v-else>{{ msg.content }}</div>
+          </div>
       </div>
 
       <!-- Loading indicator -->
@@ -70,7 +101,7 @@
         <input
           v-model="inputText"
           type="text"
-          placeholder="Ask me..."
+          :placeholder="language === 'en' ? 'Ask about my work, projects, or skills...' : 'আমার কাজ, প্রকল্প বা দক্ষতা সম্পর্কে জিজ্ঞাসা করুন...'"
           class="flex-1 px-3 py-2 rounded-lg bg-dark-border border border-primary/20 text-white placeholder-dark-text text-sm focus:outline-none focus:border-primary transition-colors"
           :disabled="isLoading"
         />
@@ -79,7 +110,7 @@
           :disabled="isLoading || !inputText.trim()"
           class="px-4 py-2 rounded-lg bg-primary text-dark-bg font-bold text-sm hover:bg-primary-light disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
-          Send
+          {{ language === 'en' ? 'Send' : 'পাঠান' }}
         </button>
       </form>
     </div>
@@ -88,12 +119,19 @@
 
 <script setup lang="ts">
 import { onMounted, ref, nextTick } from 'vue';
-import { usePortfolioLLM } from '~/composables/usePortfolioLLM';
+import { useOpenRouterChat } from '~/composables/useOpenRouterChat';
+import { marked } from 'marked';
 
-const { messages, isLoading, sendMessage, clearMessages } = usePortfolioLLM();
+const { messages, isLoading, status, errorMessage, language, initialize, sendMessage, clearMessages, setLanguage } = useOpenRouterChat();
 const inputText = ref('');
 const messagesContainer = ref<HTMLElement>();
 
+const renderMarkdown = (content: string) => {
+  return marked(content, {
+    breaks: true,
+    gfm: true,
+  });
+};
 const handleSend = async () => {
   if (!inputText.value.trim()) return;
 
@@ -116,6 +154,7 @@ const clearChat = () => {
 
 // Scroll to bottom when messages change
 onMounted(async () => {
+  await initialize();
   await nextTick();
   if (messagesContainer.value) {
     messagesContainer.value.scrollTop = messagesContainer.value.scrollHeight;
@@ -137,5 +176,58 @@ onMounted(async () => {
 
 .animate-slideIn {
   animation: slideIn 0.3s ease-out;
+}
+
+:deep(.prose) {
+  color: inherit;
+}
+
+:deep(.prose p) {
+  margin: 0.5rem 0;
+}
+
+:deep(.prose ul, .prose ol) {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+:deep(.prose li) {
+  margin: 0.25rem 0;
+}
+
+:deep(.prose code) {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875em;
+}
+
+:deep(.prose pre) {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+}
+
+:deep(.prose pre code) {
+  background-color: transparent;
+  padding: 0;
+  color: #e0e0e0;
+}
+
+:deep(.prose strong) {
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+:deep(.prose em) {
+  color: #f87171;
+}
+
+:deep(.prose a) {
+  color: #60a5fa;
+  text-decoration: underline;
 }
 </style>
