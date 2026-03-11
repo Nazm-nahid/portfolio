@@ -87,8 +87,8 @@
             </div>
           </div>
 
-          <!-- Right Content - Animated Card -->
-          <div class="hidden md:flex justify-center items-center">
+          <!-- Right Content - Animated Card & Chat -->
+          <div class="hidden md:flex justify-center items-center flex-col gap-6">
             <div class="relative">
               <div
                 class="w-64 h-80 md:w-80 md:h-96 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/50 shadow-neon-cyan flex flex-col justify-end float"
@@ -108,6 +108,9 @@
                 class="absolute w-32 h-32 rounded-full border border-accent/30 -bottom-5 -left-10 animate-pulse"
               ></div>
             </div>
+
+            <!-- ChatBot Component -->
+            <ChatBot />
           </div>
         </div>
 
