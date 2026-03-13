@@ -32,7 +32,7 @@
               </div>
             </div>
 
-            <p class="text-xl text-dark-text max-w-xl">
+            <p class="hidden md:flex text-lg text-dark-text max-w-xl font-mono">
               <span class="text-secondary">></span>
               I build secure, large scale software with strong backend expertise and a product-focused mindset.
 I’m also a competitive programmer with 1300+ solved problems, bringing sharp problem-solving to real-world engineering.
@@ -88,7 +88,7 @@ I’m also a competitive programmer with 1300+ solved problems, bringing sharp p
           <!-- Right Content - Animated Card & Chat -->
           <div class=" md:flex justify-center items-center flex-col gap-6">
             <div class="relative">
-              <ChatBot class="shadow-neon-cyan float" />
+              <ChatBot class="shadow-neon-cyan" />
               <!-- Animated Circles -->
               <!-- <div
                 class="absolute w-40 h-40 rounded-full border border-accent/30 -top-10 -left-10 animate-pulse"

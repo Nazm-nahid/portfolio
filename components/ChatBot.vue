@@ -1,20 +1,11 @@
 <template>
-  <!-- Fullscreen overlay -->
-  <Teleport to="body">
-    <div
-      v-if="isFullscreen"
-      class="fixed inset-0 z-50 bg-dark-bg/95 backdrop-blur-sm flex items-center justify-center p-4"
-    >
-      <div class="w-full max-w-3xl h-full max-h-screen flex flex-col bg-dark-card border border-primary/30 rounded-xl shadow-2xl overflow-hidden">
-        <ChatInner :is-fullscreen="true" @toggle-fullscreen="isFullscreen = false" />
-      </div>
-    </div>
-  </Teleport>
-
-  <!-- Normal card -->
   <div
-    v-if="!isFullscreen"
-    class="w-full max-w-md bg-dark-card border border-primary/30 rounded-xl shadow-lg overflow-hidden flex flex-col h-96"
+    :class="[
+      'bg-dark-card border border-primary/30 rounded-xl overflow-hidden flex flex-col transition-all duration-300',
+      isFullscreen
+        ? 'fixed inset-4 z-50 w-auto max-w-none h-auto shadow-2xl'
+        : 'w-full max-w-md h-96 shadow-lg float',
+    ]"
   >
     <!-- Header -->
     <div class="bg-gradient-to-r from-primary/20 to-secondary/20 border-b border-primary/30 p-4">
@@ -25,7 +16,7 @@
           </h3>
           <p class="text-xs text-dark-text">{{ language === 'en' ? 'You can ask anything about my work, skills, and also about the project you want me to work on' : 'আমার কাজ, দক্ষতা এবং আপনি যে প্রজেক্টে আমাকে দিয়ে কাজ করাতে চান সে সম্পর্কেও যেকোনো প্রশ্ন করতে পারেন।' }}</p>
         </div>
-        <div class="flex gap-2">
+        <div class="flex gap-2 items-center">
         <button
           @click="setLanguage('en')"
           :class="[
@@ -47,6 +38,15 @@
           ]"
         >
           Bangla
+        </button>
+        <button
+          type="button"
+          @click="isFullscreen = !isFullscreen"
+          class="px-3 py-1 rounded text-xs font-semibold transition-colors bg-dark-border text-dark-text hover:border-primary border border-primary/20"
+          :aria-label="isFullscreen ? 'Exit fullscreen chat' : 'Open fullscreen chat'"
+          :title="isFullscreen ? 'Exit fullscreen' : 'Fullscreen'"
+        >
+          {{ isFullscreen ? 'Exit' : 'Fullscreen' }}
         </button>
       </div>
       </div>
@@ -127,7 +127,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, nextTick } from 'vue';
+import { onBeforeUnmount, onMounted, ref, nextTick, watch } from 'vue';
 import { useOpenRouterChat } from '~/composables/useOpenRouterChat';
 import { marked } from 'marked';
 
@@ -135,6 +135,12 @@ const { messages, isLoading, errorMessage, language, initialize, sendMessage, se
 const inputText = ref('');
 const messagesContainer = ref<HTMLElement>();
 const isFullscreen = ref(false);
+
+const syncFullscreenDocumentState = (fullscreen: boolean) => {
+  if (typeof document === 'undefined') return;
+
+  document.body.classList.toggle('chatbot-fullscreen', fullscreen);
+};
 
 const renderMarkdown = (content: string) => {
   return marked(content, {
@@ -165,6 +171,14 @@ onMounted(async () => {
     messagesContainer.value.scrollTop = messagesContainer.value.scrollHeight;
   }
 });
+
+watch(isFullscreen, (fullscreen) => {
+  syncFullscreenDocumentState(fullscreen);
+});
+
+onBeforeUnmount(() => {
+  syncFullscreenDocumentState(false);
+});
 </script>
 
 <style scoped>
@@ -181,6 +195,15 @@ onMounted(async () => {
 
 .animate-slideIn {
   animation: slideIn 0.3s ease-out;
+}
+
+:global(body.chatbot-fullscreen header) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+:global(body.chatbot-fullscreen) {
+  overflow: hidden;
 }
 
 :deep(.prose) {
