@@ -41,7 +41,7 @@ export default defineNuxtConfig({
 
   // Runtime Config
   runtimeConfig: {
-    openRouterApiKey: 'your-api-key-here',
+    openRouterApiKey: process.env.AI_KEY || '',
     openRouterModel: 'openai/gpt-4o-mini',
     public: {
       siteName: 'My Portfolio',
